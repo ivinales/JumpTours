@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'nombre','apellido','correo', 'contrasena',
     ];
 
     /**
@@ -25,7 +25,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'contrasena', 'remember_token',
     ];
 
     /**
@@ -36,4 +36,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    // Relación de uno a muchos
+    public function business(){
+		return $this->hasMany('App\Business');
+    }
+    // Relación de uno a muchos
+    public function direction(){
+		return $this->hasMany('App\Direction');
+    }
+    // Relación de Muchos a Uno
+	public function profile(){
+		return $this->belongsTo('App\Profile', 'profile_id');
+	}
 }
