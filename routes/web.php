@@ -13,12 +13,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+//GENERAL
 Route::get('/', function () {
-    return view('welcome');
+    return view('presentacion.index');
+});
+Route::get('/about', function () {
+    return view('presentacion.about');
+});
+Route::get('/contact', function () {
+    return view('presentacion.contact');
 });
 
-
-
+Route::get('/login', function () {
+    return view('auth.login');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+/*
+|--------------------------------------------------------------------------
+*/
+// USUARIO
+Route::get('/configuracion', 'UserController@config')->name('config');
+Route::get('/perfil/{id}', 'UserController@profile')->name('profile');

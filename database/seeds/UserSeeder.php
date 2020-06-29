@@ -14,21 +14,21 @@ class UserSeeder extends Seeder
         //
         DB::table('users')->insert([
             'profile_id' => 1,
-            'nombre' => Str::random(10),
-            'apellido' => Str::random(10),
-            'email' => Str::random(10).'@gmail.com',
+            'nombre' =>'ian',
+            'apellido' => 'viñales',
+            'email' => 'ian@gmail.com',
             'fechaNacimiento' => '2020-06-16',
-            'nacionalidad' => Str::random(10),
+            'nacionalidad' => 'chileno',
             'telefono' => '+56942685326',
             'password' => Hash::make('admin123'),
         ]);
         DB::table('users')->insert([
             'profile_id' => 2,
-            'nombre' => Str::random(10),
-            'apellido' => Str::random(10),
-            'email' => Str::random(10).'@gmail.com',
+            'nombre' => 'sebastian',
+            'apellido' => 'ortiz',
+            'email' => 'seba@gmail.com',
             'fechaNacimiento' => '2020-06-16',
-            'nacionalidad' => Str::random(10),
+            'nacionalidad' =>'peruano',
             'telefono' => '+56942685326',
             'password' => Hash::make('admin123'),
         ]);
