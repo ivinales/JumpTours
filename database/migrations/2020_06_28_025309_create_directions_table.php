@@ -15,6 +15,7 @@ class CreateDirectionsTable extends Migration
     {
         Schema::create('directions', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users');
             $table->foreignId('commune_id')->constrained('communes');
             $table->string('calle');
             $table->string('numero');

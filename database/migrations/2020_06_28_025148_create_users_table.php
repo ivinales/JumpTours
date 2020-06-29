@@ -18,12 +18,12 @@ class CreateUsersTable extends Migration
             $table->foreignId('profile_id')->constrained('profiles');
             $table->string('nombre');
             $table->string('apellido');
-            $table->string('correo')->unique();
+            $table->string('email')->unique();
             $table->date('fechaNacimiento');
             $table->string('nacionalidad');
             $table->string('telefono');
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('contrasena');
+            $table->string('password');
             $table->rememberToken();
             $table->timestamps();
         });
