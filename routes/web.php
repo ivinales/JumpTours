@@ -54,6 +54,9 @@ Route::get('/subir-imagen/{id}', 'ImageController@create')->name('image.create')
 Route::post('/image/save', 'ImageController@save')->name('image.save');
 Route::get('/image/file/{filename}', 'ImageController@getImage')->name('image.file');
 Route::get('/imagen/{id}', 'ImageController@detail')->name('image.detail');
+Route::get('/imagen/editar/{id}', 'ImageController@edit')->name('image.edit');
+Route::get('/image/delete/{id}', 'ImageController@delete')->name('image.delete');
+
 
 //COMENTARIO
 Route::post('/comment/save', 'CommentController@save')->name('comment.save');
