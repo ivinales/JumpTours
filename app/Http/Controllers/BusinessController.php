@@ -38,14 +38,14 @@ class BusinessController extends Controller
 		$user_id = $id;
 		$nombre = $request->input('nombre');
 		$telefono = $request->input('telefono');
-		$tipodenegocio = $request->input('tipoNegocio');
+		$tiponegocio = $request->input('tipoNegocio');
 		
 		// Asignar nuevos valores al objeto del usuario
 		$business = new Business;
 		$business->user_id = $id;
 		$business->nombre = $nombre;
 		$business->telefono = $telefono;
-		$business->tipodenegocio = $tipodenegocio;
+		$business->tiponegocio = $tiponegocio;
 		$business->coordenadas = "00";
 		
 		// Subir la imagen
@@ -80,5 +80,13 @@ class BusinessController extends Controller
     public function getLogo($filename){
 		$file = Storage::disk('business')->get($filename);
 		return new Response($file, 200);
+	}
+
+	public function profile($id){
+		$business = Business::find($id);
+		
+		return view('business.profile', [
+			'business' => $business
+		]);
 	}
 }

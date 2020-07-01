@@ -19,7 +19,8 @@ class UserController extends Controller
 		// Validación del formulario
 		$validate = $this->validate($request, [
             'nombre' => ['required', 'string', 'max:255'],
-            'apellido' => ['required', 'string', 'max:255'],
+			'apellido' => ['required', 'string', 'max:255'],
+			'nick' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,'.$id,
             'nacionalidad' => ['required', 'string', 'max:255'],
         ]);
@@ -28,6 +29,7 @@ class UserController extends Controller
 		$profile_id = $request->input('perfil');
 		$nombre = $request->input('nombre');
 		$apellido = $request->input('apellido');
+		$nick = $request->input('nick');
 		$email = $request->input('email');
 		$fechaNacimiento = $request->input('fechaNacimiento');
 		$nacionalidad = $request->input('nacionalidad');
@@ -37,6 +39,7 @@ class UserController extends Controller
 		$user->profile_id = $profile_id;
 		$user->nombre = $nombre;
 		$user->apellido = $apellido;
+		$user->nick = $nick;
 		$user->email = $email;
 		$user->fechaNacimiento = $fechaNacimiento;
 		$user->nacionalidad = $nacionalidad;

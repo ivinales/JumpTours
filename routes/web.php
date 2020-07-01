@@ -38,7 +38,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 */
 // USUARIO
 Route::get('/configuracion', 'UserController@config')->name('config');
-Route::get('/perfil/{id}', 'UserController@profile')->name('profile');
 Route::post('/user/update', 'UserController@update')->name('user.update');
 Route::get('/user/avatar/{filename}', 'UserController@getImage')->name('user.avatar');
 
@@ -48,12 +47,22 @@ Route::post('/storeBusiness', 'BusinessController@store')->name('storeBusiness')
 Route::get('/business', 'BusinessController@index')->name('business');
 Route::get('/perfilBusiness/{id}', 'BusinessController@profileBusiness')->name('profileBusiness');
 Route::get('/business/logo/{filename}', 'BusinessController@getLogo')->name('business.logo');
+Route::get('/perfil/{id}', 'BusinessController@profile')->name('profile');
 
 //IMAGEN
 Route::get('/subir-imagen/{id}', 'ImageController@create')->name('image.create');
 Route::post('/image/save', 'ImageController@save')->name('image.save');
 Route::get('/image/file/{filename}', 'ImageController@getImage')->name('image.file');
 Route::get('/imagen/{id}', 'ImageController@detail')->name('image.detail');
+
+//COMENTARIO
+Route::post('/comment/save', 'CommentController@save')->name('comment.save');
+Route::get('/comment/delete/{id}', 'CommentController@delete')->name('comment.delete');
+
+// LIKE
+Route::get('/like/{image_id}', 'LikeController@like')->name('like.save');
+Route::get('/dislike/{image_id}', 'LikeController@dislike')->name('like.delete');
+
 
 
 
