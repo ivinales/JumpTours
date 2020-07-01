@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->foreignId('profile_id')->constrained('profiles');
             $table->string('nombre');
             $table->string('apellido');
+            $table->text('image');
             $table->string('email')->unique();
             $table->date('fechaNacimiento');
             $table->string('nacionalidad');

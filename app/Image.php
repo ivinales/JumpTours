@@ -13,11 +13,11 @@ class Image extends Model
 		return $this->belongsTo('App\Business', 'business_id');
 	}
     // Relación uno a mucho / One To Many 
-	public function like(){
+	public function likes(){
 		return $this->hasMany('App\Like');
     }
     // Relación uno a mucho / One To Many 
-	public function comment(){
+	public function comments(){
 		return $this->hasMany('App\Comment');
 	}
 }

@@ -17,7 +17,7 @@ class Business extends Model
 		return $this->hasMany('App\Video');
     }
     // Relación uno a mucho / One To Many 
-	public function image(){
+	public function images(){
 		return $this->hasMany('App\Image');
 	}
 }

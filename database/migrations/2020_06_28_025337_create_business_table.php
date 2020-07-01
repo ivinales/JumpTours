@@ -19,7 +19,7 @@ class CreateBusinessTable extends Migration
             $table->string('nombre');
             $table->string('telefono');
             $table->string('imagen');
-            $table->string('tipodenegocio');
+            $table->string('tipoNegocio');
             $table->string('coordenadas');
             $table->timestamps();
         });

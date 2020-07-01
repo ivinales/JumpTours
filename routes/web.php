@@ -39,3 +39,24 @@ Route::get('/home', 'HomeController@index')->name('home');
 // USUARIO
 Route::get('/configuracion', 'UserController@config')->name('config');
 Route::get('/perfil/{id}', 'UserController@profile')->name('profile');
+Route::post('/user/update', 'UserController@update')->name('user.update');
+Route::get('/user/avatar/{filename}', 'UserController@getImage')->name('user.avatar');
+
+//EMPRESAS
+Route::get('/registrar', 'BusinessController@create')->name('registerBusiness');
+Route::post('/storeBusiness', 'BusinessController@store')->name('storeBusiness');
+Route::get('/business', 'BusinessController@index')->name('business');
+Route::get('/perfilBusiness/{id}', 'BusinessController@profileBusiness')->name('profileBusiness');
+Route::get('/business/logo/{filename}', 'BusinessController@getLogo')->name('business.logo');
+
+//IMAGEN
+Route::get('/subir-imagen/{id}', 'ImageController@create')->name('image.create');
+Route::post('/image/save', 'ImageController@save')->name('image.save');
+Route::get('/image/file/{filename}', 'ImageController@getImage')->name('image.file');
+Route::get('/imagen/{id}', 'ImageController@detail')->name('image.detail');
+
+
+
+
+
+

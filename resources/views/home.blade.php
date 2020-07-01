@@ -4,20 +4,17 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+			@include('includes.message')
+			
+			@foreach($images as $image)
+				@include('includes.image',['image'=>$image])
+			@endforeach
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
+			<!-- PAGINACION -->
+			<div class="clearfix"></div>
+			{{-- {{$images->links()}} --}}
         </div>
+
     </div>
 </div>
 @endsection

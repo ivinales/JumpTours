@@ -15,7 +15,7 @@ class CreateVideosTable extends Migration
     {
         Schema::create('videos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('businnes_id')->constrained('business');
+            $table->foreignId('business_id')->constrained('business');
             $table->string('ruta');
             $table->text('descripcion');
             $table->timestamps();
