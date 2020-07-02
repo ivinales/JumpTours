@@ -5,10 +5,15 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
 			@include('includes.message')
-
-			<div class="card pub_image pub_image_detail">
+            {{-- <h1>aqui</h1>
+            @foreach ($business as $busin)
+                    {{$busin->id}}
+                        
+            @endforeach
+            <h1>termina</h1> --}}
+            <div class="card pub_image pub_image_detail">
 				<div class="card-header">
-
+                    
 					@if($image->business->image)
 					<div class="container-avatar">
 						{{-- <img src="{{ route('business.avatar',['filename'=>$image->business->image]) }}" class="avatar" /> --}}
@@ -31,7 +36,7 @@
 					<div class="description">
 						<span class="nickname">{{'@'.$image->business->nombre}} </span>
 						<span class="nickname date">{{' | '.\FormatTime::LongTimeFilter($image->created_at)}}</span>
-						<p>{{$image->description}}</p>
+						<p>{{$image->descripcion}}</p>
 					</div>
 
 					<div class="likes">
@@ -52,8 +57,9 @@
 
 						<span class="number_likes">{{count($image->likes)}}</span>
 					</div>
-
-					@if(Auth::user() && Auth::user()->id == $image->business->id)
+                    @foreach ($business as $busin)
+                    @if(Auth::user() && $busin->id == $image->business->id)
+                   
 					<div class="actions">
 						<a href="{{ route('image.edit', ['id' => $image->id]) }}" class="btn btn-sm btn-primary">Actualizar</a>
 						<!--<a href="{{ route('image.delete', ['id' => $image->id]) }}" class="btn btn-sm btn-danger">Borrar</a>-->
@@ -90,6 +96,7 @@
 						</div>
 					</div>
 					@endif
+                    @endforeach
 
 					<div class="clearfix"></div>
 					<div class="comments">
@@ -121,13 +128,26 @@
 
 							<span class="nickname">{{'@'.$comment->user->nick}} </span>
 							<span class="nickname date">{{' | '.\FormatTime::LongTimeFilter($comment->created_at)}}</span>
-							<p>{{$comment->contenido}}<br/>
-
-								@if(Auth::check() && ($comment->user_id == Auth::user()->id || $comment->image->user_id == Auth::user()->id))
+							<p>{{$comment->contenido}}
+                                    
+                                @if (Auth::user()->profile_id != '2')
+                                @foreach ($business as $busin)
+                                @if(Auth::check()  && ($comment->user_id == Auth::user()->id || $comment->image->business_id ==$busin->id))
+                                
 								<a href="{{ route('comment.delete', ['id' => $comment->id]) }}" class="btn btn-sm btn-danger">
 									Eliminar
 								</a>
-								@endif
+                                @endif
+                                @endforeach
+                                @else
+                                @if(Auth::check()  && ($comment->user_id == Auth::user()->id ))
+                                
+								<a href="{{ route('comment.delete', ['id' => $comment->id]) }}" class="btn btn-sm btn-danger">
+									Eliminar
+								</a>
+                                @endif
+                                @endif
+                                
 							</p>
 						</div>
 						@endforeach

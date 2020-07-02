@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Comment;
+use App\Business;
 
 class CommentController extends Controller
 {
@@ -37,25 +38,48 @@ class CommentController extends Controller
     }
     
     public function delete($id){
-		// Conseguir datos del usuario logueado 
-		$user = \Auth::user();
-		
-		// Conseguir objeto del comentario
-		$comment = Comment::find($id);
-		
-		// Comprobar si soy el dueño del comentario o de la publicación
-		if($user && ($comment->user_id == $user->id || $comment->image->user_id == $user->id)){
-			$comment->delete();
-			
-			return redirect()->route('image.detail', ['id' => $comment->image->id])
-						 ->with([
-							'message' => 'Comentario eliminado correctamente!!'
-						 ]);
-		}else{
-			return redirect()->route('image.detail', ['id' => $comment->image->id])
-						 ->with([
-							'message' => 'EL COMENTARIO NO SE HA ELIMINADO!!'
-						 ]);
-		}
+            // Conseguir datos del usuario logueado 
+            $user = \Auth::user();
+            
+            // Conseguir objeto del comentario
+            $comment = Comment::find($id);
+            $business=Business::where('user_id',$user->id)->get();
+            if (\Auth::user()->profile_id != '2') {
+                foreach ($business as $busin) {
+                    // Comprobar si soy el dueño del comentario o de la publicación
+                    if($user && ($comment->user_id == $user->id || $comment->image->business_id == $busin->id)){
+                        $comment->delete();
+                        
+                        return redirect()->route('image.detail', ['id' => $comment->image->id])
+                                    ->with([
+                                        'message' => 'Comentario eliminado correctamente!!'
+                                    ]);
+                    }else{
+                        return redirect()->route('image.detail', ['id' => $comment->image->id])
+                                    ->with([
+                                        'message' => 'EL COMENTARIO NO SE HA ELIMINADO!!'
+                                    ]);
+                    }
+                }
+            }else{
+                    // Comprobar si soy el dueño del comentario o de la publicación
+                    if($user && ($comment->user_id == $user->id )){
+                        $comment->delete();
+                        
+                        return redirect()->route('image.detail', ['id' => $comment->image->id])
+                                    ->with([
+                                        'message' => 'Comentario eliminado correctamente!!'
+                                    ]);
+                    }else{
+                        return redirect()->route('image.detail', ['id' => $comment->image->id])
+                                    ->with([
+                                        'message' => 'EL COMENTARIO NO SE HA ELIMINADO!!'
+                                    ]);
+                    }
+
+            }
+            die();
+            
+     
 	}
 }

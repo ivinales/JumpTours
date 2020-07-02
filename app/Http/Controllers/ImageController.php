@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\File;
 use App\Image;
 use App\Comment;
 use App\Like;
+use App\Business;
 
 class ImageController extends Controller
 {
@@ -58,9 +59,15 @@ class ImageController extends Controller
 	}
 	public function detail($id){
 		$image = Image::find($id);
-		
+		$user = \Auth::user();
+		$business=Business::where('user_id',$user->id)->get();
+		// foreach($business as $busin){
+		// 	echo($busin->id);
+		// }
+		// die();
 		return view('image.detail',[
-			'image' => $image
+			'image' => $image,
+			'business'=>$business
 		]);
 	}
 
@@ -69,33 +76,38 @@ class ImageController extends Controller
 		$image = Image::find($id);
 		$comments = Comment::where('image_id', $id)->get();
 		$likes = Like::where('image_id', $id)->get();
+		$business=Business::where('user_id',$user->id)->get();
 		
-		if($user && $image && $image->user->id == $user->id){
+
+		foreach ($business as $busin) {
+			if($user && $image && $image->business->id == $busin->id){
 			
-			// Eliminar comentarios
-			if($comments && count($comments) >= 1){
-				foreach($comments as $comment){
-					$comment->delete();
+				// Eliminar comentarios
+				if($comments && count($comments) >= 1){
+					foreach($comments as $comment){
+						$comment->delete();
+					}
 				}
-			}
-			
-			// Eliminar los likes
-			if($likes && count($likes) >= 1){
-				foreach($likes as $like){
-					$like->delete();
+				
+				// Eliminar los likes
+				if($likes && count($likes) >= 1){
+					foreach($likes as $like){
+						$like->delete();
+					}
 				}
+				
+				// Eliminar ficheros de imagen
+				Storage::disk('images')->delete($image->image_path);
+				
+				// Eliminar registro imagen
+				$image->delete();
+				
+				$message = array('message' => 'La imagen se ha borrado correctamente.');
+			}else{
+				$message = array('message' => 'La imagen no se ha borrado.');
 			}
-			
-			// Eliminar ficheros de imagen
-			Storage::disk('images')->delete($image->image_path);
-			
-			// Eliminar registro imagen
-			$image->delete();
-			
-			$message = array('message' => 'La imagen se ha borrado correctamente.');
-		}else{
-			$message = array('message' => 'La imagen no se ha borrado.');
 		}
+		
 		
 		return redirect()->route('home')->with($message);
 	}
@@ -103,13 +115,48 @@ class ImageController extends Controller
 		$user = \Auth::user();
 		$image = Image::find($id);
 		
-		if($user && $image && $image->user->id == $user->id){
+		$business=Business::where('user_id',$user->id)->get();
+		
+
+		foreach ($business as $busin) {
+		if($user && $image && $image->business->id == $busin->id){
 			return view('image.edit', [
 				'image' => $image
 			]);
 		}else{
 			return redirect()->route('home');
 		}
+	}
+	}
+
+	public function update(Request $request){
+		//Validación
+		// $validate = $this->validate($request, [
+		// 	'descipcion' => 'required',
+		// 	'ruta'  => 'image'
+		// ]);
+		
+		// Recoger datos
+		$image_id = $request->input('image_id');
+		$ruta = $request->file('image_path');
+		$descripcion = $request->input('description');
+		
+		// Conseguir objeto image
+		$image = Image::find($image_id);
+		$image->descripcion = $descripcion;
+		
+		// Subir fichero
+		if($ruta){
+			$image_path_name = time().$ruta->getClientOriginalName();
+			Storage::disk('images')->put($image_path_name, File::get($ruta));
+			$image->ruta = $image_path_name;
+		}
+		
+		// Actualizar registro
+		$image->update();
+		
+		return redirect()->route('image.detail', ['id' => $image_id])
+						 ->with(['message' => 'Imagen actualizada con exito']);
 	}
 
 	
