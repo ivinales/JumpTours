@@ -151,6 +151,14 @@
                             </div>
                         </div>
                     </form>
+                    <hr>
+                    <div class="form-group row mb-0">
+                        <div class="col-md-8 offset-md-4">
+                            <a href="{{ url('/auth/redirect/google') }}" class="btn btn-danger">Ingresar con <i class="fa fa-google"></i> </a>
+                            <a href="{{ url('/auth/redirect/facebook') }}" class="btn btn-primary">Ingresar con <i class="fa fa-facebook"></i> </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

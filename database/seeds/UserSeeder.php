@@ -22,6 +22,8 @@ class UserSeeder extends Seeder
             'fechaNacimiento' => '2020-06-16',
             'nacionalidad' => 'chileno',
             'telefono' => '+56956348257',
+            'provider'=>'jumtours@.cl',
+            'provider_id'=>'123456789',
             'password' => Hash::make('admin123'),
         ]);
         DB::table('users')->insert([
@@ -34,6 +36,8 @@ class UserSeeder extends Seeder
             'fechaNacimiento' => '2020-06-16',
             'nacionalidad' =>'peruano',
             'telefono' => '+56942685326',
+            'provider'=>'jumtours@.cl',
+            'provider_id'=>'123456789',
             'password' => Hash::make('admin123'),
         ]);
         DB::table('users')->insert([
@@ -46,6 +50,8 @@ class UserSeeder extends Seeder
             'fechaNacimiento' => '2020-06-16',
             'nacionalidad' => 'chileno',
             'telefono' => '+56956348257',
+            'provider'=>'jumtours@.cl',
+            'provider_id'=>'123456789',
             'password' => Hash::make('admin123'),
         ]);
         DB::table('users')->insert([
@@ -58,6 +64,8 @@ class UserSeeder extends Seeder
             'fechaNacimiento' => '2020-06-16',
             'nacionalidad' =>'peruano',
             'telefono' => '+56942685326',
+            'provider'=>'jumtours@.cl',
+            'provider_id'=>'123456789',
             'password' => Hash::make('admin123'),
         ]);
         DB::table('users')->insert([
@@ -70,6 +78,8 @@ class UserSeeder extends Seeder
             'fechaNacimiento' => '2020-06-16',
             'nacionalidad' => Str::random(10),
             'telefono' => '+56942685326',
+            'provider'=>'jumtours@.cl',
+            'provider_id'=>'123456789',
             'password' => Hash::make('admin123'),
         ]);
     }
