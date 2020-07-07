@@ -13,16 +13,16 @@ class ProfileSeeder extends Seeder
     {
         //
         DB::table('profiles')->insert([
-            'nombre' => 'empresa',
+            'nombre' => 'Empresario',
             'estado' => 1,
         ]);
 
         DB::table('profiles')->insert([
-            'nombre' => 'turista',
+            'nombre' => 'Turista',
             'estado' => 1,
         ]);
         DB::table('profiles')->insert([
-            'nombre' => 'administrador',
+            'nombre' => 'Administrador',
             'estado' => 1,
         ]);
     }

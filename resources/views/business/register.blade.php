@@ -45,7 +45,7 @@
                             <div class="col-md-6">
                                 <select class="selectpicker" name="tipoNegocio">
                                     <option value="restaurant">Restaurant</option>
-                                    <option value="excursion">Excursion</option>
+                                    <option value="hoteleria">Hoteleria</option>
                                     <option value="entretencion">Entretencion</option>
                                   </select>
                                   

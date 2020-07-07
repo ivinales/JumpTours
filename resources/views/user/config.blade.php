@@ -113,7 +113,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        {{-- <div class="form-group row">
                             <label for="telefono" class="col-md-4 col-form-label text-md-right">{{ __('Tipo de cuenta') }}</label>
 
                             <div class="col-md-6">
@@ -131,7 +131,7 @@
                                   </select>
                                   
                             </div>
-                        </div>
+                        </div> --}}
                         
 						<div class="form-group row">
 
