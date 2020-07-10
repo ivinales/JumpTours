@@ -80,10 +80,10 @@
                                         <li>
                                             <div class="geodir-post-title">
                                                 <h4 class="geodir-entry-title">
-                                                    {{-- <a href="{{ route('shop', $shop->id) }}" title="View: {{ $shop->name }}">{{ $shop->name }}</a> --}}
+                                                    <a href="https://maps.google.com/?q= {{ $business->address_latitude}},{{ $business->address_longitude}}" target="__blank" title="View: {{ $business->nombre }}">{{ $business->nombre }}</a> 
                                                 </h4>
                                             </div>
-                                             	{{-- <a href="{{ route('shop', $shop->id) }}"><img src="{{ $shop->thumbnail }}" alt="{{ $shop->name }}" class="align size-medium_large" width="1400" height="930"></a> --}}
+                                             	 <a href="https://maps.google.com/?q= {{ $business->address_latitude}},{{ $business->address_longitude}}"><img src="{{ route('business.logo',['filename'=>$business->imagen]) }}" alt="{{ $business->nombre }}" class="align size-medium_large avatar" width="50%"></a> 
                                         </li>
                                     </ul>
                                 </div>
@@ -96,11 +96,11 @@
                     <div class="geodir-output-location">
                     <div class="geodir-output-location geodir-output-location-mapbubble">
                         <div class="geodir_post_meta  geodir-field-post_title"><span class="geodir_post_meta_icon geodir-i-text">
-                            <i class="fas fa-minus" aria-hidden="true"></i>
-                            <span class="geodir_post_meta_title">Place Title: </span></span>{{ $business->nombre }}</div>
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                            <span class="geodir_post_meta_title">Nombre : </span></span>{{ $business->nombre }}</div>
                         <div class="geodir_post_meta  geodir-field-address" itemscope="" itemtype="http://schema.org/PostalAddress">
-                            <span class="geodir_post_meta_icon geodir-i-address"><i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                            <span class="geodir_post_meta_title">Address: </span></span><span itemprop="streetAddress">{{ $business->address }}</span>
+                            <span class="geodir_post_meta_icon geodir-i-address"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <span class="geodir_post_meta_title">Dirección: </span></span><span itemprop="streetAddress">{{ $business->address }}</span>
                         </div>
                     </div>
                     </div>
