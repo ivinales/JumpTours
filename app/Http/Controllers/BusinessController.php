@@ -39,6 +39,9 @@ class BusinessController extends Controller
 		$nombre = $request->input('nombre');
 		$telefono = $request->input('telefono');
 		$tiponegocio = $request->input('tipoNegocio');
+		$address = $request->input('address');
+		$address_latitude = $request->input('address_latitude');
+		$address_longitude = $request->input('address_longitude');
 		
 		// Asignar nuevos valores al objeto del usuario
 		$business = new Business;
@@ -46,7 +49,9 @@ class BusinessController extends Controller
 		$business->nombre = $nombre;
 		$business->telefono = $telefono;
 		$business->tiponegocio = $tiponegocio;
-		$business->coordenadas = "00";
+		$business->address = $address;
+		$business->address_latitude = $address_latitude;
+		$business->address_longitude = $address_longitude;
 		
 		// Subir la imagen
         $image_path = $request->file('image_path');

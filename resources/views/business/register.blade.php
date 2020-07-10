@@ -68,6 +68,21 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <label for="address">Dirección</label>
+                            <input class="form-control map-input {{ $errors->has('address') ? 'is-invalid' : '' }}" type="text" name="address" id="address" value="{{ old('address') }}">
+                            <input type="hidden" name="address_latitude" id="address-latitude" value="{{ old('latitude') ?? '0' }}" />
+                            <input type="hidden" name="address_longitude" id="address-longitude" value="{{ old('longitude') ?? '0' }}" />
+                            @if($errors->has('address'))
+                                <span class="invalid-feedback">
+                                    <strong>{{ $errors->first('address') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                        <div id="address-map-container" class="mb-2" style="width:100%;height:400px; ">
+                            <div style="width: 100%; height: 100%" id="address-map"></div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
@@ -82,3 +97,5 @@
     </div>
 </div>
 @endsection
+<script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&libraries=places&callback=initialize&language=en&region=GB" async defer></script>
+<script src="/js/mapInput.js"></script>
