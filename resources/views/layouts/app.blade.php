@@ -30,7 +30,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/home') }}">
-                <img src="{{asset('img/logojump4xd.png') }}" alt="" width="50px">
+                <img src="{{asset('assets/img/logo-final.png') }}" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -47,25 +47,25 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesion') }}</a>
+                                <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Iniciar Sesion') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
+                                    <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                                 </li>
                             @endif
                         @else
                         <li class="nav-item">
-							<a href="{{ route('business.explore') }}" class="nav-link">Empresas</a>
+							<a href="{{ route('business.explore') }}" class="nav-link text-white">Empresas</a>
 						</li>
 						<li class="nav-item">
-							<a href="{{ route('likes') }}" class="nav-link">Favoritas</a>
+							<a href="{{ route('likes') }}" class="nav-link text-white">Favoritas</a>
 						</li>
                             <li class="nav-item dropdown">
                                 <li>
                                     @include('includes.avatar')	
                                 </li>
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->nombre }} <span class="caret"></span>
                                 </a>
 

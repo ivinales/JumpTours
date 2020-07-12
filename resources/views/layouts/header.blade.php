@@ -45,7 +45,7 @@
     <div class="container d-flex">
 
       <div class="logo mr-auto">
-        <a href="/"><img class="iconojump" src="assets/img/logo-final.png"></a>
+        <a href="/"><img src="assets/img/logo-final.png"></a>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.php"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
