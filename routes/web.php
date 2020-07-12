@@ -48,6 +48,7 @@ Route::get('/business', 'BusinessController@index')->name('business');
 Route::get('/perfilBusiness/{id}', 'BusinessController@profileBusiness')->name('profileBusiness');
 Route::get('/business/logo/{filename}', 'BusinessController@getLogo')->name('business.logo');
 Route::get('/perfil/{id}', 'BusinessController@profile')->name('profile');
+Route::get('/explore/{search?}', 'businessController@explore')->name('business.explore');
 
 //IMAGEN
 Route::get('/subir-imagen/{id}', 'ImageController@create')->name('image.create');

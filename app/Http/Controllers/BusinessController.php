@@ -94,4 +94,21 @@ class BusinessController extends Controller
 			'business' => $business
 		]);
 	}
+	public function explore($search = null){
+		
+		if(!empty($search)){
+			$business = Business::where('nombre', 'LIKE', '%'.$search.'%')
+							// ->orWhere('name', 'LIKE', '%'.$search.'%')
+							// ->orWhere('surname', 'LIKE', '%'.$search.'%')
+							->orderBy('id', 'desc')
+							->paginate(5);
+		}else{
+			$business = Business::orderBy('id', 'desc')->paginate(5);
+		}
+		
+		return view('business.explore',[
+			'business' => $business
+		]);
+	}
+	
 }

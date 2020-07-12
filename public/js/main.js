@@ -54,7 +54,7 @@ window.addEventListener("load", function(){
 	
 	// BUSCADOR
 	$('#buscador').submit(function(e){
-		$(this).attr('action',url+'/gente/'+$('#buscador #search').val());
+		$(this).attr('action',url+'/explore/'+$('#buscador #search').val());
 	});
 	
 });
