@@ -53,6 +53,40 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="region" class="col-md-4 col-form-label text-md-right">{{ __('Region') }}</label>
+                            <div class="col-md-6">
+                                <select class="selectpicker" name="region">
+                                    <option value="Coquimbo">Coquimbo</option>
+                                </select>
+                                 
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="comuna" class="col-md-4 col-form-label text-md-right">{{ __('Comuna') }}</label>
+                            <div class="col-md-6">
+                                <select class="selectpicker" name="comuna">
+                                    <option value="La Serena">La Serena</option>
+                                    <option value="Coquimbo">Coquimbo</option>
+                                    <option value="Andacollo">Andacollo</option>
+                                    <option value="La Higuera">La Higuera</option>
+                                    <option value="Paiguano">Paiguano</option>
+                                    <option value="Vicuña">Vicuña</option>
+                                    <option value="Illapel">Illapel</option>
+                                    <option value="Canela">Canela</option>
+                                    <option value="Los Vilos">Los Vilos</option>
+                                    <option value="Salamanca">Salamanca</option>
+                                    <option value="Ovalle">Ovalle</option>
+                                    <option value="Combarbalá">Combarbalá</option>
+                                    <option value="Monte Patria">Monte Patria</option>
+                                    <option value="Punitaqui">Punitaqui</option>
+                                    <option value="Río Hurtado">Río Hurtado</option>                                        
+                                </select>
+                                 
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
 
 							
                             <label for="image_path" class="col-md-4 col-form-label text-md-right">{{ __('Logo') }}</label>

@@ -39,6 +39,8 @@ class BusinessController extends Controller
 		$nombre = $request->input('nombre');
 		$telefono = $request->input('telefono');
 		$tiponegocio = $request->input('tipoNegocio');
+		$region = $request->input('region');
+		$comuna = $request->input('comuna');
 		$address = $request->input('address');
 		$address_latitude = $request->input('address_latitude');
 		$address_longitude = $request->input('address_longitude');
@@ -49,6 +51,8 @@ class BusinessController extends Controller
 		$business->nombre = $nombre;
 		$business->telefono = $telefono;
 		$business->tiponegocio = $tiponegocio;
+		$business->region = $region;
+		$business->comuna = $comuna;
 		$business->address = $address;
 		$business->address_latitude = $address_latitude;
 		$business->address_longitude = $address_longitude;

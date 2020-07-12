@@ -35,27 +35,27 @@
 
 </head>
 
-<body style="background-color: rgb(0, 208, 255);">
+<body style="background-color: rgb(255, 255, 255);">
 
 
   <!--Aqui estaba un bar con telefono de la empresa y iconos de redes sociales-->
 
   <!-- ======= Header ======= -->
-  <header id="header" style="background-color: rgb(255, 255, 255);"> 
+  <header id="header" style="background-color: rgb(24, 48, 66);"> 
     <div class="container d-flex">
 
       <div class="logo mr-auto">
-        <a href="/"><img class="iconojump" src="assets/img/logojump4xd.png"></a>
+        <a href="/"><img class="iconojump" src="assets/img/logo-final.png"></a>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.php"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav class="nav-menu d-none d-lg-block">
         <ul class="tipografia-nabar section-title">
-          <li><a href="/" style="color:rgb(32, 133, 255);">Home</a></li>
-          <li><a href="/about" style="color:rgb(32, 133, 255);">Sobre Jump Tours</a></li>
-          <li><b><a href="/contact" style="color:rgb(32, 133, 255);">Contactanos</a></b></li>
-          <li><a href="/login" style="color:rgb(32, 133, 255);">Inicia Sesión</a></li>
+          <li><a href="/" style="color:rgb(255, 255, 255);">Home</a></li>
+          <li><a href="/about" style="color:rgb(255, 255, 255);">Sobre Jump Tours</a></li>
+          <li><b><a href="/contact" style="color:rgb(255, 255, 255);">Contactanos</a></b></li>
+          <li><a href="/login" style="color:rgb(255, 255, 255);">Inicia Sesión</a></li>
        
 
         </ul>

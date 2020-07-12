@@ -20,6 +20,8 @@ class CreateBusinessTable extends Migration
             $table->string('telefono');
             $table->string('imagen');
             $table->string('tipoNegocio');
+            $table->string('region');
+            $table->string('comuna');
             $table->string('address')->nullable();
             $table->double('address_latitude')->nullable();
             $table->double('address_longitude')->nullable();

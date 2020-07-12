@@ -1,5 +1,5 @@
 <!-- ======= Footer ======= -->
-<footer id="footer" style="background-color: rgb(255, 255, 255);">
+<footer id="footer" style="background-color: rgb(24, 48, 66);">
 
     <div class="footer-top">
       <div class="container">
@@ -45,7 +45,7 @@
       <div class="mr-md-auto text-center text-md-left">
         
         <div class="container">
-          <p class="m-0 text-left  tipografia" style="color:rgb(32, 133, 255);">&copy; Desarrollado por Sebastian Ortiz - Fabian Barraza - Esteban Gonzalez</p>
+          <p class="m-0 text-left  tipografia" style="color:rgb(255, 255, 255);">&copy; Desarrollado por Sebastian Ortiz - Fabian Barraza - Esteban Gonzalez</p>
         </div>
 
 
