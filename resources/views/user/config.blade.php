@@ -113,25 +113,7 @@
                             </div>
                         </div>
 
-                        {{-- <div class="form-group row">
-                            <label for="telefono" class="col-md-4 col-form-label text-md-right">{{ __('Tipo de cuenta') }}</label>
-
-                            <div class="col-md-6">
-                                <select class="selectpicker" name="perfil"  >
-                        @if( Auth::user()->profile_id  ==1)
-                                    <option value="2">Turista</option>
-                                    <option value="1" selected>Empresa</option>
-                                    
-
-                        @else
-                                    <option value="2" selected>Turista</option>
-                                    <option value="1" >Empresa</option>
-                        @endif
-
-                                  </select>
-                                  
-                            </div>
-                        </div> --}}
+                    <input type="text" hidden="hidden" value="{{Auth::user()->profile_id }}" name="perfil">
                         
 						<div class="form-group row">
 
