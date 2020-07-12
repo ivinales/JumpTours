@@ -55,6 +55,12 @@
                                 </li>
                             @endif
                         @else
+                        <li class="nav-item">
+							{{-- <a href="{{ route('business.index') }}" class="nav-link">Gente</a> --}}
+						</li>
+						<li class="nav-item">
+							<a href="{{ route('likes') }}" class="nav-link">Favoritas</a>
+						</li>
                             <li class="nav-item dropdown">
                                 <li>
                                     @include('includes.avatar')	
