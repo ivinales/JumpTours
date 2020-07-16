@@ -115,7 +115,7 @@
                             <div class="col-md-6">
                                 <select class="selectpicker" name="perfil">
                                     <option value="2">Turista</option>
-                                    <option value="1">Empresa</option>
+                                    <option value="1">Empresio</option>
                                   </select>
                                   
                             </div>

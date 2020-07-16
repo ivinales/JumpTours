@@ -13,7 +13,7 @@
             <div class="carousel-content animated fadeInUp">
               <h2>Ven a Disfrutar y <span>Conocer</span></h2>
               <p>La diversidad de Lugares que Jump Tours tiene para ofrecer como Campings y Parques.</p>
-              <div class="text-center"><a href="iniciaSesionTurista.php" class="btn-get-started">Ingresar</a></div>
+              <div class="text-center"><a href="/login" class="btn-get-started">Ingresar</a></div>
             </div>
           </div>
         </div>
@@ -24,7 +24,7 @@
             <div class="carousel-content animated fadeInUp">
               <h2>Ven a Disfrutar y Conocer</h2>
               <p>Los maravillosos e increibles destinos gastronomicos que Jump Tours tiene para Ofrecer.</p>
-              <div class="text-center"><a href="iniciaSesionTurista.php" class="btn-get-started">Ingresar</a></div>
+              <div class="text-center"><a href="/login" class="btn-get-started">Ingresar</a></div>
             </div>
           </div>
         </div>
@@ -35,7 +35,7 @@
             <div class="carousel-content animated fadeInUp">
               <h2>Ven a Disfrutar y Conocer</h2>
               <p>Los extraordinarios y amplios servicios Hoteleros que Jump Tours tiene para Ofrecer.</p>
-              <div class="text-center"><a href="iniciaSesionTurista.php" class="btn-get-started">Ingresar</a></div>
+              <div class="text-center"><a href="/login" class="btn-get-started">Ingresar</a></div>
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@
               del tu organizacion para que los turistas lo conozcan y sepan como llegar a aquellos lugares que seran imperdibles.</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">Registrate</a>
+            <a class="cta-btn align-middle" href="/login">Registrate</a>
           </div>
         </div>
 
@@ -106,7 +106,7 @@
               <p>Visitar Perfil</p>
               
 
-              <a href="iniciaSesionTurista.php" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="/login" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -115,7 +115,7 @@
             <div class="portfolio-info">
               <h4>Hotel Almagro</h4>
               <p>Visitar Perfil</p>
-              <a href="iniciaSesionTurista.php" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="/login" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -125,7 +125,7 @@
               <h4>Camping Alamos</h4>
               <p>Visitar Perfil</p>
               
-              <a href="iniciaSesionTurista.php" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="/login" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -135,7 +135,7 @@
               <h4>Fogon del Mar</h4>
               <p>Visitar Perfil</p>
               
-              <a href="iniciaSesionTurista.php" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="/login" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -145,7 +145,7 @@
               <h4>Hotel Baia - Enjoy</h4>
               <p>Visitar Perfil</p>
              
-              <a href="iniciaSesionTurista.php" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="/login" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -155,7 +155,7 @@
               <h4>Pub El Muelle</h4>
               <p>Visitar Perfil</p>
               
-              <a href="iniciaSesionTurista.php" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="/login" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
