@@ -4,6 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+        	@include('includes.message')
             <div class="card">
                 
                 <div class="card-header">{{ __('Mis Empresas') }} 
@@ -27,8 +28,9 @@
                     <p>{{'Se unió: '.\FormatTime::LongTimeFilter($busine->created_at)}}</p>
                     <div>
                         <a href="{{ route('profileBusiness', ['id' => $busine->id])}}" class="btn btn-success">Ver perfil</a>
-                        <a href="{{ route('profileBusiness', ['id' => $busine->id])}}" class="btn btn-danger">Modificar</a>
+                        <a href="{{ route('profileBusiness', ['id' => $busine->id])}}" class="btn btn-warning">Modificar</a>
                         <a href="{{ route('image.create',['id'=>$busine->id]) }}" class="btn btn-secondary">Subir foto</a>
+                        <a href="{{ route('business.delete',['id'=>$busine->id]) }}" class="btn btn-danger">Eliminar</a>
 
                     </div>
 				</div>

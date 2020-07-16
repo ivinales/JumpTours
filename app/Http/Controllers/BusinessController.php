@@ -8,6 +8,9 @@ use App\User;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use App\Image;
+use App\Comment;
+use App\Like;
 
 class BusinessController extends Controller
 {
@@ -114,5 +117,36 @@ class BusinessController extends Controller
 			'business' => $business
 		]);
 	}
+
+	public function delete($id){
+		$user = \Auth::user();
+		$business = Business::find($id);
 	
+
+		$image = image::where('business_id', $id)->get();
+		
+
+		foreach ($image as $img ) {
+		$comments = Comment::where('image_id', $img->id)->get();
+
+		foreach ($comments as $comen ) {
+			$comen->delete();
+			die();
+		}
+		$like = Like::where('image_id', $img->id)->get();
+
+		foreach ($like as $lik ) {
+		$lik->delete();
+			# code...
+		}
+		
+
+
+		$img->delete();
+		}
+		$business->delete();
+
+		return redirect()->route('business')
+						 ->with(['message'=>'Empresa eliminada correctamente']);
+	}
 }
