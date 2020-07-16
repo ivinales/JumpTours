@@ -50,6 +50,8 @@ Route::get('/business/logo/{filename}', 'BusinessController@getLogo')->name('bus
 Route::get('/perfil/{id}', 'BusinessController@profile')->name('profile');
 Route::get('/explore/{search?}', 'businessController@explore')->name('business.explore');
 Route::get('/delete/{id}', 'businessController@delete')->name('business.delete');
+Route::get('/edit/{id}', 'businessController@edit')->name('business.edit');
+Route::post('/updateBusiness', 'BusinessController@update')->name('updateBusiness');
 
 
 

@@ -28,7 +28,7 @@
                     <p>{{'Se unió: '.\FormatTime::LongTimeFilter($busine->created_at)}}</p>
                     <div>
                         <a href="{{ route('profileBusiness', ['id' => $busine->id])}}" class="btn btn-success">Ver perfil</a>
-                        <a href="{{ route('profileBusiness', ['id' => $busine->id])}}" class="btn btn-warning">Modificar</a>
+                        <a href="{{ route('business.edit', ['id' => $busine->id])}}" class="btn btn-warning">Modificar</a>
                         <a href="{{ route('image.create',['id'=>$busine->id]) }}" class="btn btn-secondary">Subir foto</a>
                         <a href="{{ route('business.delete',['id'=>$busine->id]) }}" class="btn btn-danger">Eliminar</a>
 

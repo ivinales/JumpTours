@@ -149,4 +149,64 @@ class BusinessController extends Controller
 		return redirect()->route('business')
 						 ->with(['message'=>'Empresa eliminada correctamente']);
 	}
+
+	public function edit($id){
+
+		$business = Business::find($id)->first();
+		
+		return view('business.edit', [
+			'business' => $business
+		]);
+	}
+
+	public function update(Request $request){
+		$user = \Auth::user();
+		$id = $user->id;
+
+		
+		$id_empresa = $request->input('id_empresa');
+		$business  = business::find($id_empresa);
+		$nombre = $request->input('nombre');
+		$telefono = $request->input('telefono');
+		$tiponegocio = $request->input('tipoNegocio');
+		$region = $request->input('region');
+		$comuna = $request->input('comuna');
+		$address = $request->input('address');
+		$address_latitude = $request->input('address_latitude');
+		$address_longitude = $request->input('address_longitude');
+
+		$business->user_id = $id;
+		$business->nombre = $nombre;
+		$business->telefono = $telefono;
+		$business->tiponegocio = $tiponegocio;
+		$business->region = $region;
+		$business->comuna = $comuna;
+		$business->address = $address;
+		$business->address_latitude = $address_latitude;
+		$business->address_longitude = $address_longitude;
+
+		$image_path = $request->file('image_path');
+        
+		if($image_path){
+			// Poner nombre unico
+			$image_path_name = time().$image_path->getClientOriginalName();
+			
+			// Guardar en la carpeta storage (storage/app/users)
+			Storage::disk('business')->put($image_path_name, File::get($image_path));
+			
+			// Seteo el nombre de la imagen en el objeto
+			$business->imagen = $image_path_name;
+		}
+		$business->update();
+
+		return redirect()->route('business')
+						 ->with(['message'=>'Empresa actualizada correctamente']);
+
+
+
+
+		return 'estamos aqui ';
+	}
+
 }
+
